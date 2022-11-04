@@ -29,6 +29,18 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+					<cloudHubDeployment>
+						<username>capymino3</username>
+						<environment>Sandbox</environment>
+						<workers>1</workers>
+						<workerType>Micro</workerType>
+						<applicationName>ycb-monitoring-apps</applicationName>
+						<password>*#Player_123#*</password>
+						<muleVersion>4.4.0</muleVersion>
+						<objectStoreV2>true</objectStoreV2>
+					</cloudHubDeployment>
+				</configuration>
 			</plugin>
 		</plugins>
 		<finalName>sample-codedeploy-app</finalName>
@@ -48,6 +60,19 @@
 			<classifier>mule-plugin</classifier>
 		</dependency>
 	</dependencies>
+	
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>maven-releases</name>
+			<url>http://45.79.124.17:8081/artifactory/libs-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<name>maven-snapshots</name>
+			<url>http://45.79.124.17:8081/repository/maven-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<repositories>
 		<repository>
